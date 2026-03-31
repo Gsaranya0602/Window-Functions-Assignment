@@ -1,5 +1,6 @@
-use assignment1;
+
 Window Functions Assignment:
+    
 1.Create a table Employees and write a window function to Rank details based on Salary.
 
 CREATE TABLE Employees (
@@ -30,13 +31,15 @@ rank() over(partition by department order by salary desc) as salary_rank from em
 
 2.Also write a window function to get maximum and minimum Salary
 
-# running max & minimum salary
+# running max & minimum salary.
+    
 select emp_id,emp_name,department,salary,
 max(salary) over(order by salary ) as max_salary,
 min(salary)over(order by salary ) as min_salary 
 from employees;
 
-# over all Maximum & Minimum
+# over all Maximum & Minimum.
+    
 select emp_id,emp_name,department,salary,
 max(salary) over() as max_salary,
 min(salary)over() as min_salary 
